@@ -22,11 +22,12 @@
 
 <h:body>
     <h:form id="form">
-        <p:inputText value="#{mainPage.message}" placeholder="Message for send">
+        <p:inputText value="#{mainPage.message}" placeholder="#{msg.messageForSend}">
             <p:ajax event="keyup" update="form:btn1" listener="#{mainPage.setNotShowBtn(false)}"/>
         </p:inputText>
 
-        <p:commandButton actionListener="#{mainPage.sendMessage}" id="btn1" disabled="#{mainPage.notShowBtn}"/>
+        <p:commandButton actionListener="#{mainPage.sendMessage}" id="btn1"
+                         value="#{msg.send}" disabled="#{mainPage.notShowBtn}"/>
 
 
     </h:form>
