@@ -26,7 +26,7 @@
             <p:ajax event="keyup" update="form:btn1" listener="#{mainPage.setNotShowBtn(false)}"/>
         </p:inputText>
 
-        <p:commandButton actionListener="#{mainPage.sendMessage}" id="btn1" disabled="#{mainPage.notShowBtn}" update="response"/>
+        <p:commandButton actionListener="#{mainPage.sendMessage}" id="btn1" disabled="#{mainPage.notShowBtn}"/>
 
 
     </h:form>
