@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: hairutdinov
+  Date: 26.06.18
+  Time: 11:25
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+    <title>Welcome</title>
+</h:head>
+
+<h:body>
+    <h:form id="form">
+        <p:inputText value="#{mainPage.message}" placeholder="Message for send">
+            <p:ajax event="keyup" update="form:btn1" listener="#{mainPage.setNotShowBtn(false)}"/>
+        </p:inputText>
+
+        <p:commandButton actionListener="#{mainPage.sendMessage}" id="btn1" disabled="#{mainPage.notShowBtn}" update="response"/>
+
+
+    </h:form>
+</h:body>
+
+</html>
